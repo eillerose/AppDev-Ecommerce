@@ -1,21 +1,13 @@
 const express = require('express');
+
 const router = express.Router();
-const tourController = require('../controller/tourController');
+const tourController = require("../controller/tourController");
 
-// GET all tours
-router.get('/', tourController.getAllTours);
-
-// GET a specific tour
-router.get('/:id', tourController.getTourById);
-
-// POST a new tour
-router.post('/', tourController.createTour);
-
-
-// PUT (update) a tour
-router.put('/:id', tourController.updateTour);
-
-// DELETE a tour
-router.delete('/:id', tourController.deleteTour);
+router.get('/', tourController.index);
+router.get('/shop/about', tourController.about);
+router.get('/shop/product', tourController.product);
+router.get('/shop/service', tourController.service);
+router.get('/shop/gallery', tourController.gallery);
+router.get('/shop/contact', tourController.contact);
 
 module.exports = router;
